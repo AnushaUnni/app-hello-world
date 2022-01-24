@@ -37,5 +37,6 @@ jobs:
           echo "cd to nodejs"
           npm install
           gulp
+          ls
           echo "ran gulp command"
           npm start
