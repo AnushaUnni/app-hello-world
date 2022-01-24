@@ -26,6 +26,7 @@ jobs:
       - name: Install and Build 🔧
         run: | # Install npm packages
           npm install
+          npm install -g @microsoft/teamsfx-cli
           teamsfx -h
     
       # Deploy the code.
