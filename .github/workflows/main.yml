@@ -13,8 +13,6 @@ jobs:
       M365_ACCOUNT_NAME: ${{secrets.M365_ACCOUNT_NAME}}
       M365_ACCOUNT_PASSWORD: ${{secrets.M365_ACCOUNT_PASSWORD}}
       M365_TENANT_ID: ${{secrets.M365_TENANT_ID}}
-      # To specify the env name for multi-env feature.
-      TEAMSFX_ENV_NAME: staging
     steps:
 
   # Setup environment.
@@ -27,7 +25,6 @@ jobs:
           persist-credentials: false
       - name: Install and Build 🔧
         run: | # Install npm packages
-          cd nodejs
           npm install
           npm ci
           npm i @microsoft/teamsfx-cli
@@ -37,10 +34,8 @@ jobs:
       - uses: OfficeDev/teamsfx-cli-action@v1
         with:
           commands: deploy
-          env: ${{env.TEAMSFX_ENV_NAME}}
 
       # Publish the Teams App.
       - uses: OfficeDev/teamsfx-cli-action@v1
         with:
           commands: publish
-          env: ${{env.TEAMSFX_ENV_NAME}}
