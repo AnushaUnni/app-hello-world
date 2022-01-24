@@ -16,13 +16,13 @@ jobs:
       # To specify the env name for multi-env feature.
       TEAMSFX_ENV_NAME: staging
     steps:
- 
-      # Provision resources.
-      - uses: OfficeDev/teamsfx-cli-action@v1
-        with:
-          commands: provision
-          subscription: ${{secrets.AZURE_SUBSCRIPTION_ID}}
-          env: ${{env.TEAMSFX_ENV_NAME}}
+      #run gulp to create manifest file
+      - name: Run a gulp
+        run: |
+          cd nodejs
+          gulp
+          ls
+          echo "ran gulp command"
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
