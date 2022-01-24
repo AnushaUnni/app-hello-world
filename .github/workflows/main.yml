@@ -27,7 +27,6 @@ jobs:
           persist-credentials: false
       - name: Install and Build 🔧
         run: | # Install npm packages
-          cd nodejs
           npm install
           npm ci
           npm i @microsoft/teamsfx-cli
