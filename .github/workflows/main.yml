@@ -31,6 +31,7 @@ jobs:
           npm install
           npm ci
           npm i @microsoft/teamsfx-cli
+          npm i teamsfx@latest
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
