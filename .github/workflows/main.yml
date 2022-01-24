@@ -17,16 +17,18 @@ jobs:
       TEAMSFX_ENV_NAME: staging
     steps:
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@main
-      #run gulp to create manifest file
-      - name: Run a gulp
-        run: |
+  # Setup environment.
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+      - name: Install and Build 🔧
+        run: | # Install npm packages
           cd nodejs
           npm install
-          gulp
-          ls
-          echo "ran gulp command"
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
