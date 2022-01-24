@@ -13,7 +13,7 @@ jobs:
   # This workflow contains a single job called "build"
   buildAndPublish:
     # The type of runner that the job will run on
-    runs-on: node:12
+    runs-on: self-hosted
     env:
       M365_ACCOUNT_NAME: shanmukhasandeep1993@outlook.com
       M365_ACCOUNT_PASSWORD: Rss@66990
