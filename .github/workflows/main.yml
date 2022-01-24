@@ -16,6 +16,9 @@ jobs:
       # To specify the env name for multi-env feature.
       TEAMSFX_ENV_NAME: staging
     steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@main
       #run gulp to create manifest file
       - name: Run a gulp
         run: |
