@@ -32,7 +32,7 @@ jobs:
       - uses: OfficeDev/teamsfx-cli-action@v1
         with:
           commands: account login azure 
-          service-principal: true
+          service-principal: false
           username: ${{secrets.AZURE_SERVICE_PRINCIPAL_NAME}}
           password: ${{secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD}}
           tenant: ${{secrets.AZURE_TENANT_ID}}
