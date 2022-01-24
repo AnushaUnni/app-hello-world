@@ -35,6 +35,7 @@ jobs:
           echo "multiline started"
           cd nodejs
           echo "cd to nodejs"
+          npm install
           gulp
           echo "ran gulp command"
           npm start
