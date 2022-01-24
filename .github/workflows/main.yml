@@ -30,6 +30,7 @@ jobs:
           cd nodejs
           npm install
           npm ci
+          npm i @microsoft/teamsfx-cli
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
