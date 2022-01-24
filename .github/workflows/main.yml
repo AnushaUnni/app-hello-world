@@ -32,9 +32,13 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          echo "multiline started"
           cd nodejs
+          echo "cd to nodejs"
           npm install
           echo "npm install completed"
           npm install -g gulp
+          echo "installed gulp"
           gulp
+          echo "ran gulp command"
           npm start
