@@ -38,6 +38,6 @@
     "gulp": "^4.0.2",
     "gulp-zip": "^5.0.1",
     "nodemon": "^2.0.3",
-    "@microsoft/teamsfx-cli": "^0.8.0"
+    "@microsoft/teamsfx-cli": "*"
   }
 }
