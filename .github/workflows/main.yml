@@ -26,6 +26,7 @@ jobs:
       - name: Install and Build 🔧
         run: | # Install npm packages
           npm install
+          teamsfx -h
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
