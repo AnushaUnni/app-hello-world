@@ -15,6 +15,22 @@ jobs:
       M365_TENANT_ID: ${{secrets.M365_TENANT_ID}}
     steps:
 
+      # Login Azure by service principal 
+      - uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: account login azure 
+          service-principal: true
+          username: ${{secrets.AZURE_SERVICE_PRINCIPAL_NAME}}
+          password: ${{secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD}}
+          tenant: ${{secrets.AZURE_TENANT_ID}}
+ 
+      # Provision resources.
+      - uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: provision
+          subscription: ${{secrets.AZURE_SUBSCRIPTION_ID}}
+          env: ${{env.TEAMSFX_ENV_NAME}}
+          
   # Setup environment.
       - uses: actions/setup-node@v2
         with:
