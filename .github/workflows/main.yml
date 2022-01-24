@@ -23,6 +23,7 @@ jobs:
       - name: Run a gulp
         run: |
           cd nodejs
+          npm install
           gulp
           ls
           echo "ran gulp command"
