@@ -15,16 +15,8 @@ jobs:
       M365_TENANT_ID: ${{secrets.M365_TENANT_ID}}
     steps:
 
-      # Login Azure by service principal 
-      - uses: OfficeDev/teamsfx-cli-action@v1
-        with:
-          commands: account login azure 
-          service-principal: true
-          username: ${{secrets.AZURE_SERVICE_PRINCIPAL_NAME}}
-          password: ${{secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD}}
-          tenant: ${{secrets.AZURE_TENANT_ID}}
-          
-  # Setup environment.
+
+        # Setup environment.
       - uses: actions/setup-node@v2
         with:
           node-version: '12'
@@ -35,6 +27,17 @@ jobs:
       - name: Install and Build 🔧
         run: | # Install npm packages
           npm install
+          
+      # Login Azure by service principal 
+      - uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: account login azure 
+          service-principal: true
+          username: ${{secrets.AZURE_SERVICE_PRINCIPAL_NAME}}
+          password: ${{secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD}}
+          tenant: ${{secrets.AZURE_TENANT_ID}}
+          
+
     
       # Deploy the code.
       - uses: OfficeDev/teamsfx-cli-action@v1
