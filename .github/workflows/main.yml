@@ -14,6 +14,11 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: node:12
+    env:
+      M365_ACCOUNT_NAME: shanmukhasandeep1993@outlook.com
+      M365_ACCOUNT_PASSWORD: Rss@66990
+      # To specify the env name for multi-env feature.
+      TEAMSFX_ENV_NAME: staging
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
