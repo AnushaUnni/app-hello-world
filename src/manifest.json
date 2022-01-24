@@ -27,7 +27,7 @@
         {
             "entityId": "com.contoso.helloworld.hellotab",
             "name": "Hello Tab",
-            "contentUrl": "http://localhost:3333/second",
+            "contentUrl": "https://d49e-2405-201-c01a-b00f-fca0-3e9c-3c4f-d868.ngrok.io/second",
             "scopes": [
                 "personal"
             ]
@@ -35,7 +35,7 @@
     ],
     "configurableTabs": [
         {
-            "configurationUrl": "http://localhost:3333",
+            "configurationUrl": "https://d49e-2405-201-c01a-b00f-fca0-3e9c-3c4f-d868.ngrok.io",
             "canUpdateConfiguration": true,
             "scopes": [
                 "team"
